@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import ImageList from '../../ImageList/ImageList'
+import GalleryList from '../../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
 
 
@@ -30,7 +30,8 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <button onClick={getImages}>Button</button>
-        <ImageList images={ images }/>
+        {/* GalleryList is the entire gallery of images. */}
+        <GalleryList images={ images }/>
         
       </div>
     );

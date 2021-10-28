@@ -25,7 +25,7 @@ Between the server and client, you'll need two terminal tabs! Because we're usin
 
 For this project you will create a gallery page to share pictures of things that are important to you. Visitors can click on an image to see a description and use a button to "like" an image. 
 
-To practice passing values through `props` in React, you will build the gallery using mulitple components - an `App`, `GalleryList`, and `GalleryItem`.
+[x]To practice passing values through `props` in React, you will build the gallery using mulitple components - an `App`, `GalleryList`, and `GalleryItem`.
 
 - `App` - represents the overall application or site 
 - `GalleryList` - represents the gallery of images. By componentizing, we could reuse this component in different applications
@@ -40,16 +40,16 @@ To practice passing values through `props` in React, you will build the gallery 
 ![mockup two](wireframes/second-mockup.png)
 
 ### Task List
-- Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
-- Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
-    - Iterate (loop over) the list of gallery data
-    - Make GalleryItems
-- Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
-    - Update the `GalleryList` to use this component to display an image.
-    - Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
-    - Display the number likes for each item and include a like button.
-    - When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
-    - Update the gallery each time a like button is clicked.
+[x] Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
+[x] Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
+    [x] Iterate (loop over) the list of gallery data
+    [x] Make GalleryItems
+[] Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
+    [] Update the `GalleryList` to use this component to display an image.
+    [] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
+    [] Display the number likes for each item and include a like button.
+    [] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
+    [] Update the gallery each time a like button is clicked.
 
 
 

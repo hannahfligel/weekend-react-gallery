@@ -4,7 +4,7 @@ const galleryItems = [
     { id: 3, path: './images/marlow.jpg', description: 'My beautiful new-born niece, Marlow', likes: 0 },
     { id: 4, path: './images/me-and-sibs.jpg', description: 'My siblings and I at my sisters wedding', likes: 0 },
     { id: 5, path: './images/san-diego-trip.jpg', description: 'My partner Stav and I on our first trip to one of our favorite places on earth - San Diego, CA', likes: 0 },
-    { id: 6, path: './images/nevada-photography-trip.jpg', description: 'My last photography trip to Nevada', likes: 0 }
+    { id: 6, path: './images/nevada-photography-trip.png', description: 'My last photography trip to Nevada', likes: 0 }
 ];
 
 module.exports = galleryItems;
