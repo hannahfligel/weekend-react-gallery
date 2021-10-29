@@ -29,6 +29,9 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+
+        <a href="#!" className="button" data-micron="squeeze">Squeeze</a>
+
         <button onClick={getImages}>Button</button>
         {/* GalleryList is the entire gallery of images. */}
         <GalleryList images={ images }/>

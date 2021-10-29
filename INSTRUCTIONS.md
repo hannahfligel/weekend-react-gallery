@@ -45,9 +45,9 @@ For this project you will create a gallery page to share pictures of things that
     [x] Iterate (loop over) the list of gallery data
     [x] Make GalleryItems
 [] Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
-    [] Update the `GalleryList` to use this component to display an image.
-    [] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
-    [] Display the number likes for each item and include a like button.
+    [x] Update the `GalleryList` to use this component to display an image.
+    [x] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
+    [x] Display the number likes for each item and include a like button.
     [] When the like button is clicked, use `Axios` to update (`PUT`) the like count `/gallery/like/:id`.
     [] Update the gallery each time a like button is clicked.
 
@@ -63,14 +63,14 @@ For each `feature` of your application, make a branch, work on the branch, and t
 
 ### Features
 
-- Move the data into a database (postgresql)
-    - name your database `react_gallery`
-    - include a `database.sql` file documenting your database tables
-- Add a form (new **component**) that allows a user to POST a new gallery item
-  - Client side form (use absolute URL for images)
-  - Server side route for posting an image
-- Ability to delete a gallery item
-- Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
-- Implement [uppy](https://uppy.io/) for image upload 
+[] Move the data into a database (postgresql)
+    [] name your database `react_gallery`
+    [] include a `database.sql` file documenting your database tables
+[] Add a form (new **component**) that allows a user to POST a new gallery item
+  [] Client side form (use absolute URL for images)
+  [] Server side route for posting an image
+[] Ability to delete a gallery item
+[] Add styling with Material-UI [https://material-ui.com/](https://material-ui.com/)
+[] Implement [uppy](https://uppy.io/) for image upload 
 
 > NOTE: The above stretch goals are intended to be completed in order.
