@@ -2,16 +2,20 @@ import Axios from "axios";
 import { useState } from "react" ; 
 
 function GalleryItem ( props ){
-    //const[name, setName]= useState(null);
+
+    //const[name, setName]= useState(initialValue);
+    // name: is what we're called the variable, setName: is the function that changes the value of the const. useState() is the initial value of the variable. 
+
+    //create a const called show and set it's initial value to true in order for the image to display on the page load before the description 
     const[show, setShow]=useState( true );
 
     //onClick toggle image 
     const toggleImage = () =>{
-        //set show variable to true/false
+        //set show variable to false (to be opposite from the useState value on like 10)
         setShow (!show);
     }
 
-    //create a variable called likes and set it's initial value to the current number of likes for that image 
+    //create a variable called likes and set it's initial value to the current number of likes for that image. At the restart of the server, likes will go back to 0 as set on the gallery.data.
     const[likes, setLikes]=useState(props.image.likes);
 
 
@@ -19,7 +23,8 @@ function GalleryItem ( props ){
     //make an axios put request to update the likes on the server. 
     const updateLikes =()=>{
         //run an axios put request to the URL of /gallery/like/id (where id is set to props.image.id)
-        Axios.put(`/gallery/like/${props.image.id}`, props.image)
+        //we need the image.id to update the correct object as each id for each image will be unique.
+        Axios.put(`/gallery/like/${props.image.id}`)
             .then(response=>{
                 console.log(response);
             }).catch(error=>{
