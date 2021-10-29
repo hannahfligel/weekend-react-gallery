@@ -16,7 +16,7 @@ function App() {
     //make an axios call to /gallery(from server.js) to get the images array from gallery.data.js
     axios.get( '/gallery' ).then((response)=>{
       console.log(response.data);
-      //change Images to the images array from the get request (response.data)
+      //change the images variable value from an empty array (or whatever it's initial val is) to the images array from the get request (response.data)
       setImages(response.data);
     }).catch((err)=>{
       alert('nope!');
