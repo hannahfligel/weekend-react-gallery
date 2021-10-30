@@ -1,4 +1,7 @@
 import { useState } from "react" ; 
+import axios from "axios";
+
+
 
 //props is the object the contains the images array from App.jsx
 function NewGalleryItem() {
@@ -30,8 +33,17 @@ function NewGalleryItem() {
             url: url,
             description: description
         }
+        axios.post('/gallery', imageToUpload
+            ).then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         console.log(imageToUpload);
     }
+
+    
 
 
     return(
