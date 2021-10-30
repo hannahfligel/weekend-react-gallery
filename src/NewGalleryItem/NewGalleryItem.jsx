@@ -11,7 +11,7 @@ function NewGalleryItem() {
 
     //create an function that will capture the input event for the url 
     const urlChange = (event) =>{
-        console.log( 'in urlChange', event.target.value );
+        // console.log( 'in urlChange', event.target.value );
         //event(the argument or what is physically being typed), target(the input field itself), value(the value that is currently in the input field) 
         //set the URL variable to be the typed input
         setUrl( event.target.value);
@@ -19,9 +19,20 @@ function NewGalleryItem() {
 
     //create an function that will capture the input event for the description
     const descriptionChange = (event) =>{
-        console.log( 'in descriptionChange', event.target.value );
+        // console.log( 'in descriptionChange', event.target.value );
+        //set the description variable to be the typed input
         setDescription( event.target.value);
     }
+
+    const uploadImage = ()=>{
+        // console.log(url,description);
+        let imageToUpload={
+            url: url,
+            description: description
+        }
+        console.log(imageToUpload);
+    }
+
 
     return(
         <div>
@@ -31,7 +42,7 @@ function NewGalleryItem() {
             {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
             {/* onChange fires off the descriptionChange function */}
             <input placeholder="description" onChange={ (event)=>{ descriptionChange (event) } }></input>
-            <button>upload</button>
+            <button onClick={uploadImage}>upload</button>
         </div>
     );
 }
