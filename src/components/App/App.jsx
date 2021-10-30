@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import GalleryList from '../../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
+import NewGalleryItem from '../../NewGalleryItem/NewGalleryItem';
 
 
 function App() {
@@ -35,14 +36,14 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-
+        <NewGalleryItem/>
+        
         {/* button i'll use later */}
         <a href="#!" className="button" data-micron="squeeze">Squeeze</a>
 
         {/* GalleryList is the entire gallery of images. */}
         {/* Bring in GalleryList component to then send the images variable from line 11 to it via props */}
-        <GalleryList images={ images }/>
-        
+        <GalleryList imagesSentToGalleryList={ images }/>
       </div>
     );
 

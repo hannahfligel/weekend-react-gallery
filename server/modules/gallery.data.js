@@ -7,4 +7,4 @@ const galleryItems = [
     { id: 6, path: './images/nevada-photography-trip.png', description: 'My last photography trip to Nevada', likes: 0 }
 ];
 
-module.exports = galleryItems;
+module.exports = galleryItems; 

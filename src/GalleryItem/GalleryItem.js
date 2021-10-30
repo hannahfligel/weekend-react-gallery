@@ -16,7 +16,7 @@ function GalleryItem ( props ){
     }
 
     //create a variable called likes and set it's initial value to the current number of likes for that image. At the restart of the server, likes will go back to 0 as set on the gallery.data.
-    const[likes, setLikes]=useState(props.image.likes);
+    const[likes, setLikes]=useState(props.imagesSentToGalleryItem.likes);
 
 
     //create an addLike function 
@@ -24,7 +24,7 @@ function GalleryItem ( props ){
     const updateLikes =()=>{
         //run an axios put request to the URL of /gallery/like/id (where id is set to props.image.id)
         //we need the image.id to update the correct object as each id for each image will be unique.
-        Axios.put(`/gallery/like/${props.image.id}`)
+        Axios.put(`/gallery/like/${props.imagesSentToGalleryItem.id}`)
             .then(response=>{
                 console.log(response);
             }).catch(error=>{
@@ -41,10 +41,11 @@ function GalleryItem ( props ){
                 show?
                 // <h1>GalleryItem</h1>
                 //if it is true, display the image 
-                <img width="500px" src={ props.image.path } onClick={ toggleImage }></img>
+                // display image by setting the src= props(what we're bringing in from the parent component).image(the object we're brining in through props).path(the specific image's url path).
+                <img width="500px" src={ props.imagesSentToGalleryItem.path } onClick={ toggleImage }></img>
                 : //true
                 //else, display the description 
-                <h3 onClick={ toggleImage }>{props.image.description}</h3>
+                <h3 onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
             }
                 {/* on click, run the update likes function */}
                 <button onClick={updateLikes}>Like</button>

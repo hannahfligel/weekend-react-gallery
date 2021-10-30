@@ -66,8 +66,8 @@ For each `feature` of your application, make a branch, work on the branch, and t
 [x] Move the data into a database (postgresql)
     [x] name your database `react_gallery`
     [x] include a `database.sql` file documenting your database tables
-[] add pool.js 
-[] run npm install pg 
+[x] add pool.js 
+[x] run npm install pg 
 [] Add a form (new **component**) that allows a user to POST a new gallery item
   [] Client side form (use absolute URL for images)
   [] Server side route for posting an image
