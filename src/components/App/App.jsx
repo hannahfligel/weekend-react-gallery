@@ -37,9 +37,9 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <NewGalleryItem/>
-        
+
         {/* button i'll use later */}
-        <a href="#!" className="button" data-micron="squeeze">Squeeze</a>
+        {/* <a href="#!" className="button" data-micron="squeeze">Squeeze</a> */}
 
         {/* GalleryList is the entire gallery of images. */}
         {/* Bring in GalleryList component to then send the images variable from line 11 to it via props */}
