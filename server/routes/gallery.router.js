@@ -21,6 +21,19 @@ router.get('/', (req, res) => {
     })
 }); // END GET Route
 
+// POST Route
+router.post('/', ( req, res ) => {
+    console.log(req.body);
+    //create a const called queryString and give it the value of the commend being sent to the db 
+    const queryString = `INSERT INTO gallery (path, description) VALUES($1, $2);`;    
+    let values = [req.body.url, req.body.description];
+    pool.query( queryString, values ).then( ( results )=>{
+        res.sendStatus( 201 );
+    }).catch( ( error )=>{
+            res.sendStatus( 500) ;
+       })
+}) // END POST Route
+
 
 /// PUT (req.query)
 router.put( '/like/:id', (req, res)=>{
@@ -40,20 +53,17 @@ router.put( '/like/:id', (req, res)=>{
   })
 
 
-// POST Route
-router.post('/', ( req, res ) => {
-    console.log(req.body);
-    //create a const called queryString and give it the value of the commend being sent to the db 
-    const queryString = `INSERT INTO gallery (path, description) VALUES($1, $2);`;    
-    let values = [req.body.url, req.body.description];
-    pool.query( queryString, values ).then( ( results )=>{
-        res.sendStatus( 201 );
-    }).catch( ( error )=>{
-            res.sendStatus( 500) ;
-       })
-}) // END POST Route
-
-
+// DELETE /treats (req.query)
+router.delete( '/delete/:id', (req, res)=>{
+    console.log("req.body", req.body);
+    let queryString = `DELETE FROM "gallery" where id=${req.body.id};`
+    pool.query( queryString ).then( (results)=>{
+      res.sendStatus( 200 );
+    }).catch( (err)=>{
+      console.log( err );
+      res.sendStatus( 500 );
+    })
+  })
 
 
 // need to add post & delete routes 

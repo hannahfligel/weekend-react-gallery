@@ -40,6 +40,20 @@ function GalleryItem ( props ){
         //on click, add a like to the existing number of likes (props.image.likes)
     }
 
+    const deleteImage = ()=>{
+        console.log("deleteImage clicked");
+        Axios.delete(`/gallery/delete/${image.id}`,{
+            data: {
+                id: image.id
+            }
+        }).then(response=>{
+            props.getImagesFunctionToDeleteImage();
+            console.log(response);
+        }).catch(error=>{
+            console.log(error);
+        });
+    }
+
 
     return(
         <div>
@@ -64,6 +78,7 @@ function GalleryItem ( props ){
                 //else 
                 <h4>{image.likes} likes </h4>
                 }
+                <button onClick={deleteImage}>Delete</button>
         </div>
     )
 }
