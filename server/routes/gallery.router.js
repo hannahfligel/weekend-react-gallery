@@ -56,6 +56,7 @@ router.put( '/like/:id', (req, res)=>{
 // DELETE /treats (req.query)
 router.delete( '/delete/:id', (req, res)=>{
     console.log("req.body", req.body);
+    //delete from the gallery table where the image id matches the image id in the db 
     let queryString = `DELETE FROM "gallery" where id=${req.body.id};`
     pool.query( queryString ).then( (results)=>{
       res.sendStatus( 200 );

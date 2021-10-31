@@ -40,12 +40,16 @@ function GalleryItem ( props ){
         //on click, add a like to the existing number of likes (props.image.likes)
     }
 
+    //create a delete image function
     const deleteImage = ()=>{
         console.log("deleteImage clicked");
+        //run an axios req to delete the image that associated to the specific image id 
         Axios.delete(`/gallery/delete/${image.id}`,{
+            //data will be the req.body that hold the id of the image 
             data: {
                 id: image.id
             }
+            //receive getImagesFunctionToDeleteImage (getImages function from App.jsx) from GalleryList via props in order to be able to automatically refresh the images on DOM. 
         }).then(response=>{
             props.getImagesFunctionToDeleteImage();
             console.log(response);
@@ -78,6 +82,7 @@ function GalleryItem ( props ){
                 //else 
                 <h4>{image.likes} likes </h4>
                 }
+                {/* add a delete button and an onClick run the delete function */}
                 <button onClick={deleteImage}>Delete</button>
         </div>
     )

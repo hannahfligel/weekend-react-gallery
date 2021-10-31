@@ -43,6 +43,7 @@ function App() {
 
         {/* GalleryList is the entire gallery of images. */}
         {/* Bring in GalleryList component to then send the images variable from line 11 to it via props */}
+        {/* Being in GalleryList component to then send the getImages function to when to it via props */}
         <GalleryList imagesSentToGalleryList={ images } getImagesFunctionToDeleteImage={ getImages }/>
       </div>
     );
