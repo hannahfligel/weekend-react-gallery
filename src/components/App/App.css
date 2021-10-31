@@ -29,3 +29,25 @@
   box-shadow: 0 3px 13px 0 rgba(14, 9, 73, 0.2),
     0 11px 21px 0 rgba(255, 166, 220, 0.004);
 }
+
+
+  .galleryContainer{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }  
+
+
+.galleryContainer div {
+  width: 30%;
+  /* height: 300px; */
+  border:1px;
+  text-align: center;
+}
+
+img{
+  width: 100%;
+  /* height: 200px; */
+  object-fit: contain;
+}
