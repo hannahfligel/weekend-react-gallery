@@ -9,8 +9,9 @@ function GalleryList ( props ){
             <h1>ImageList</h1>
             {/* map/loop through images array passes through as props. Then, for every individual image (it's url, description, name, etc..) in the array, run the GalleryItem component to pass the image down */}
             {/* key={image.id} is there to give a unique identifier to each mapped component */}
+            {/* send then the getImagesFunctionToDeleteImage via props to GalleryItem  */}
             <div className="galleryContainer">
-            { props.imagesSentToGalleryList.map( image=>(< GalleryItem imagesSentToGalleryItem={image} key={image.id} />))}
+            { props.imagesSentToGalleryList.map( image=>(< GalleryItem imagesSentToGalleryItem={image} key={image.id}  getImagesFunctionToDeleteImage={ props.getImagesFunctionToDeleteImage }/>))}
             </div>
         </div>
     )
