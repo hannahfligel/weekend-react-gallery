@@ -5,6 +5,7 @@ const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool');
 
 
+
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 // GET Route
 router.get('/', (req, res) => {
@@ -40,9 +41,18 @@ router.put( '/like/:id', (req, res)=>{
 
 
 // POST Route
-router.post('/' ,(req,res)=>{
+router.post('/', ( req, res ) => {
     console.log(req.body);
-});
+    //create a const called queryString and give it the value of the commend being sent to the db 
+    const queryString = `INSERT INTO gallery (path, description) VALUES($1, $2);`;    
+    let values = [req.body.url, req.body.description];
+    pool.query( queryString, values ).then( ( results )=>{
+        res.sendStatus( 201 );
+    }).catch( ( error )=>{
+            res.sendStatus( 500) ;
+       })
+}) // END POST Route
+
 
 
 
