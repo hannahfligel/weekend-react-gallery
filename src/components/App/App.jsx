@@ -36,7 +36,8 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <NewGalleryItem/>
+        {/* bring in the NewGalleryItem component and send it the getImages function */}
+        <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
 
         {/* button i'll use later */}
         {/* <a href="#!" className="button" data-micron="squeeze">Squeeze</a> */}

@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 //props is the object the contains the images array from App.jsx
-function NewGalleryItem() {
+function NewGalleryItem(props) {
     //const[name, setName]= useState(null);
 
     //create a const called url and set it's initial value to an empty string. This is where the url that the user typed in will be stored.
@@ -28,13 +28,17 @@ function NewGalleryItem() {
     }
 
     const uploadImage = ()=>{
-        // console.log(url,description);
+        //create an object called imageToUpload and give it the keys of url and description and set their values to the url and description consts that were created above on line 11 & 13. 
         let imageToUpload={
             url: url,
             description: description
         }
+        //create an axios post req to /gallery and send it the imageToUpload object 
         axios.post('/gallery', imageToUpload
             ).then(function (response) {
+                //run the get.req that was passed through props from app.jsx
+                //the reasoning for this is so that you don;t have to reload the page manually to display the new uploaded image. 
+                props.getImagesFunctionSentToNewGalleyItem();
                 console.log(response);
             })
             .catch(function (error) {
