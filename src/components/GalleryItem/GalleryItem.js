@@ -105,11 +105,11 @@ function GalleryItem ( props ){
                     </div>
                     <div className="deleteIcon">
                         {/* add a delete button and an onClick run the delete function */}
-                        <DeleteIcon data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+                        <DeleteIcon onClick={deleteImage} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
                     </div>
                 </div>
                     {/* modal */}
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -125,8 +125,7 @@ function GalleryItem ( props ){
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> */}
 
             </div>
     )
