@@ -46,4 +46,4 @@ This full-stack application allow users to view a photo gallery, add an image by
 - Material UI 
 
 ## Acknowledgment 
-- Thanks to Dev, my instructor at Prime Digital Academy for assigning this fun and challenging project, and to the incredible and inspiring Ionian cohort! Also huge thanks to my partner Stav, for all the support and encouragement along the way.
+- Thanks to Dev, my instructor at Prime Digital Academy for assigning this fun and challenging project and to the incredible and inspiring Ionian cohort! Also, huge thanks to my partner Stav for all the support and encouragement along the way.
