@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import GalleryList from '../../GalleryList/GalleryList'
+import GalleryList from '../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
-import NewGalleryItem from '../../NewGalleryItem/NewGalleryItem';
-import Header from '../../Header/Header';
+import NewGalleryItem from '../NewGalleryItem/NewGalleryItem';
+import Header from '../Header/Header';
 
 
 function App() {
