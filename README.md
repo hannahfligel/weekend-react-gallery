@@ -1,9 +1,49 @@
-# Project Name
+# React Gallery
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Demo of the finished app coming soon!
 
-## Description
+## Duration:
+3 days 
 
-Your project description goes here. What problem did you solve? How did you solve it?
+## Description 
+This full-stack application allow users to view a photo gallery, add an image by inputting an image URL and image description. It also allows the user to like and delete an image. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Prerequisites
+- JavaScript 
+- React
+- HTML
+- CSS
+- Node
+- Express 
+- PostgreSQL 
+
+## Getting Started 
+- Open editor and run npm install
+- Create a database called "react_gallery"
+- Copy the code in the database.sql file into your sql database
+- In terminal, run "npm run server"
+- In another terminal window, run "npm run client"
+
+## Usage 
+### Add an image 
+- enter an image URL link in the image link input field 
+- enter an image description in the image description input field 
+- click the upload button 
+### Like and Delete an Image 
+- To like an image, click the heart icon 
+- to delete an image, click the trash icon 
+
+## Built with 
+- JavaScript 
+- React
+- HTML
+- CSS
+- Node
+- Express 
+- PostgreSQL 
+- Postico
+- Bootstrap 
+- Material UI 
+
+## Acknowledgment 
+- Thanks to Dev, my instructor at Prime Digital Academy and to the Ionian cohort!
