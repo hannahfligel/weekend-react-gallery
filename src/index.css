@@ -9,3 +9,15 @@ body {
   src: local("Carphe"),
     url("./fonts/Carphe.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "contax_sans-w01-45-light";
+  src: local("contax_sans-w01-45-light"),
+    url("./fonts/contax_sans-w01-45-light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "TenorSans-Regular";
+  src: local("TenorSans-Regular"),
+    url("./fonts/TenorSans-Regular.ttf") format("truetype");
+}

@@ -1,0 +1,53 @@
+.uploadForm{
+    background-image: url(../../images/form-background.png);
+    background-size: cover;
+    display: flex;
+    height: 23vh;
+    font-family: "TenorSans-Regular";
+    font-weight: bold;
+    color: #F8F4EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* added sticky footer */
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    text-align: ;
+}
+
+.label-background{
+    background-color: #7f7c64 !important;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.uploadButton{
+    background-color: #D8D2BE;
+    border-color: #D8D2BE; 
+    color: #38372c;
+    margin: 0 5px;
+}
+
+.uploadButton:hover{
+    background-color: #4e4d3d;
+    color:#D8D2BE;
+    border-color: #4e4d3d; 
+}
+
+.urlInput{
+    margin: 0 5px;
+}
+
+.descriptionInput{
+    margin: 0 5px;
+}
+
+.addImageTitle{
+    margin-bottom: 0;
+}
+
+hr{
+    margin: 8px 0px 10px;
+}

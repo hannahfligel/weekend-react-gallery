@@ -1,6 +1,7 @@
 import { useState } from "react" ; 
 import axios from "axios";
 import Button from '@mui/material/Button';
+import './NewGalleryItem.css';
 
 
 //props is the object the contains the images array from App.jsx
@@ -52,13 +53,23 @@ function NewGalleryItem(props) {
 
     return(
         <div className="uploadForm">
-            {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
-            {/* onChange fires off the urlChange function */}
-            <input placeholder="url" onChange={ (event)=>{ urlChange (event) } }></input>
-            {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
-            {/* onChange fires off the descriptionChange function */}
-            <input placeholder="description" onChange={ (event)=>{ descriptionChange (event) } }></input>
-            <button onClick={uploadImage}>upload</button>
+            <form className= "label-background">
+                <h2 className="addImageTitle">ADD AN IMAGE</h2>
+                <hr/>
+                <label for="urlInput" className="urlInput form-label ">
+                    IMAGE LINK:
+                    {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
+                    {/* onChange fires off the urlChange function */}
+                    <input id="urlInput" className="form-control" placeholder="enter url..." onChange={ (event)=>{ urlChange (event) } }></input>
+                </label>
+                <label for="descriptionInput" className="descriptionInput form-label">
+                    IMAGE DESCRIPTION:
+                    {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
+                    {/* onChange fires off the descriptionChange function */}
+                    <input id="descriptionInput" className="form-control" placeholder="description" onChange={ (event)=>{ descriptionChange (event) } }></input>
+                </label>
+                    <button class="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
+            </form>
         </div>
     );
 }

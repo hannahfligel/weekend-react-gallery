@@ -35,15 +35,16 @@ function App() {
     return (
       <div className="App">
         <Header />
-        {/* bring in the NewGalleryItem component and send it the getImages function */}
-        <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
         {/* button i'll use later */}
         {/* <a href="#!" className="button" data-micron="squeeze">Squeeze</a> */}
-
+        
         {/* GalleryList is the entire gallery of images. */}
         {/* Bring in GalleryList component to then send the images variable from line 11 to it via props */}
         {/* Being in GalleryList component to then send the getImages function to when to it via props */}
         <GalleryList imagesSentToGalleryList={ images } getImagesFunctionToDeleteImage={ getImages }/>
+
+        {/* bring in the NewGalleryItem component and send it the getImages function */}
+        <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
       </div>
     );
 
