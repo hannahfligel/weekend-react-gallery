@@ -105,9 +105,29 @@ function GalleryItem ( props ){
                     </div>
                     <div className="deleteIcon">
                         {/* add a delete button and an onClick run the delete function */}
-                        <DeleteIcon onClick={deleteImage}/>
+                        <DeleteIcon data-bs-toggle="modal" data-bs-target="#exampleModal"/>
                     </div>
                 </div>
+                    {/* modal */}
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete the image?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="dontDelete btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                    <button onClick={deleteImage} type="button" data-bs-dismiss="modal" class="deleteConfirm btn btn-primary">Yes, delete image</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
             </div>
     )
 }

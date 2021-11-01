@@ -95,3 +95,26 @@ img{
     font-size: 25px;
     background-color: #ffffff;;
 }
+
+
+.deleteConfirm{
+    background-color: #7f7c64;
+    border: #7f7c64;
+}
+
+.deleteConfirm:hover{
+    background-color: #64624f;
+    border: #64624f;
+}
+
+.dontDelete{
+    background-color: #c2bd99;
+    border: #c2bd99;
+    color: #64624f;
+}
+
+.dontDelete:hover{
+    background-color: #ada988;
+    border: #a7a385;
+    color: #64624f;
+}
