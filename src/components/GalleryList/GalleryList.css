@@ -50,20 +50,37 @@ img{
 }
 
 .heartIconGray:hover{
-    height: 30px;
     width: auto;
     color: #EA4C89;
 }
 
+
+.likesCount{
+    font-family: "TenorSans-Regular";
+    font-size: 24px;
+}
+
+.heartLikeCount{
+    display: flex;
+}
 
 .deleteIcon{
     height: 30px;
-    width: auto;
+    /* width: auto; */
     color: #2C2C2C;
+    /* display: flex;
+    justify-content: flex-end;
+    margin-left: 200px; */
 }
 
 .deleteIcon:hover{
-    height: 30px;
     width: auto;
     color: #EA4C89;
+}
+
+.heartLikeAndDelete{
+    /* width: 300px; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
 }

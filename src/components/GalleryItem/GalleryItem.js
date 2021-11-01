@@ -80,27 +80,33 @@ function GalleryItem ( props ){
                         <h3 onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
                 }
             </div>
-                {/* on click, run the update likes function */}
-                {image.likes===0?
-                //if it is 
-                <FavoriteIcon className="heartIconGray" onClick={updateLikes}/>:
-                //else
-                <FavoriteIcon className="heartIconRed" onClick={updateLikes}/>
-                }
+
+            <div className="heartLikeAndDelete">
+                <div className="heartLikeCount">
+                    {/* on click, run the update likes function */}
+                    {image.likes===0?
+                    //if it is 
+                    <FavoriteIcon className="heartIconGray" onClick={updateLikes}/>:
+                    //else
+                    <FavoriteIcon className="heartIconRed" onClick={updateLikes}/>
+                    }
 
 
-                {/* using a turnery operator, conditionally render the word "like" if there is only one like and "likes" if there is 0 or more than 1 */}
-                {/* is likes greater than 1? */}
-                {image.likes===1?
-                // if it is, 
-                <h4 className>{image.likes} like </h4>:
-                //else 
-                <h4>{image.likes} likes </h4>
-                }
-                {/* add a delete button and an onClick run the delete function */}
-                <DeleteIcon className="deleteIcon" onClick={deleteImage}/>
-
-        </div>
+                    {/* using a turnery operator, conditionally render the word "like" if there is only one like and "likes" if there is 0 or more than 1 */}
+                    {/* is likes greater than 1? */}
+                    {image.likes===1?
+                    // if it is, 
+                    <h4 className="likesCount">{image.likes} like </h4>:
+                    //else 
+                    <h4 className="likesCount">{image.likes} likes </h4>
+                    }
+                    </div>
+                    <div className="deleteIcon">
+                        {/* add a delete button and an onClick run the delete function */}
+                        <DeleteIcon onClick={deleteImage}/>
+                    </div>
+                </div>
+            </div>
     )
 }
 
