@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import GalleryList from '../../GalleryList/GalleryList'
+import GalleryList from '../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
-import NewGalleryItem from '../../NewGalleryItem/NewGalleryItem';
+import NewGalleryItem from '../NewGalleryItem/NewGalleryItem';
+import Header from '../Header/Header';
 
 
 function App() {
@@ -33,18 +34,17 @@ function App() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
-        {/* bring in the NewGalleryItem component and send it the getImages function */}
-        <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
+        <Header />
         {/* button i'll use later */}
         {/* <a href="#!" className="button" data-micron="squeeze">Squeeze</a> */}
-
+        
         {/* GalleryList is the entire gallery of images. */}
         {/* Bring in GalleryList component to then send the images variable from line 11 to it via props */}
         {/* Being in GalleryList component to then send the getImages function to when to it via props */}
         <GalleryList imagesSentToGalleryList={ images } getImagesFunctionToDeleteImage={ getImages }/>
+
+        {/* bring in the NewGalleryItem component and send it the getImages function */}
+        <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
       </div>
     );
 

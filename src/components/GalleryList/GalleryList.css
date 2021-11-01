@@ -1,0 +1,97 @@
+.galleryContainer{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }  
+
+.galleryContainer div {
+  /* width: 30%; */
+  /* height: 300px; */
+  /* border:1px solid black; */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+img{
+  /* object-fit first as much of the image as it can without affecting the aspect ratio */
+  object-fit: contain;
+  height: 300px;
+  width: 100%;
+}
+
+.gallery{
+    /* add a margin-bottom to the gallery to avoid having the NewGalleryItem section from covering up a part of the the images*/
+    margin-bottom: 20vh;
+}
+
+
+.galleryCard{
+    margin: 2px 2px;
+    padding: 5px;
+}
+
+.cardImage{
+    padding: 5px;
+    height: 300px;
+}
+
+  
+.heartIconRed{
+    height: 30px;
+    width: auto;
+    color: #EA4C89;
+}
+
+.heartIconGray{
+    height: 30px;
+    width: auto;
+    color: #2C2C2C;
+}
+
+.heartIconGray:hover{
+    width: auto;
+    color: #EA4C89;
+}
+
+
+.likesCount{
+    font-family: "TenorSans-Regular";
+    font-size: 24px;
+}
+
+.heartLikeCount{
+    display: flex;
+}
+
+.deleteIcon{
+    height: 30px;
+    /* width: auto; */
+    color: #2C2C2C;
+    /* display: flex;
+    justify-content: flex-end;
+    margin-left: 200px; */
+}
+
+.deleteIcon:hover{
+    width: auto;
+    color: #EA4C89;
+}
+
+.heartLikeAndDelete{
+    /* width: 300px; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.description {
+    display: flex;
+    /* align-items - y or vertical positioning */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    font-family: "TenorSans-Regular";
+    height: 300px;
+    font-size: 25px;
+    background-color: #ffffff;;
+}
