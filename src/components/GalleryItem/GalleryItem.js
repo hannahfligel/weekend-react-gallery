@@ -1,6 +1,10 @@
 import Axios from "axios";
 import { useState } from "react" ; 
 import Button from '@mui/material/Button';
+import '../GalleryList/GalleryList.css';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 function GalleryItem ( props ){
@@ -62,30 +66,40 @@ function GalleryItem ( props ){
 
 
     return(
-        <div>
-            {
-                //is the show variable true?
-                show?
-                // <h1>GalleryItem</h1>
-                //if it is true, display the image 
-                // display image by setting the src= props(what we're bringing in from the parent component).image(the object we're brining in through props).path(the specific image's url path).
-                <img width="500px" src={ props.imagesSentToGalleryItem.path } onClick={ toggleImage }></img>
-                : //true
-                //else, display the description 
-                <h3 onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
-            }
+        <div className="col-3 galleryCard">
+            <div className="cardImage">
+                {
+                    //is the show variable true?
+                    show?
+                        // <h1>GalleryItem</h1>
+                        //if it is true, display the image 
+                        // display image by setting the src= props(what we're bringing in from the parent component).image(the object we're brining in through props).path(the specific image's url path).
+                        <img src={ props.imagesSentToGalleryItem.path } onClick={ toggleImage }></img>
+                    : //true
+                        //else, display the description 
+                        <h3 onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
+                }
+            </div>
                 {/* on click, run the update likes function */}
-                <button onClick={updateLikes}>Like</button>
+                {image.likes===0?
+                //if it is 
+                <FavoriteIcon className="heartIconGray" onClick={updateLikes}/>:
+                //else
+                <FavoriteIcon className="heartIconRed" onClick={updateLikes}/>
+                }
+
+
                 {/* using a turnery operator, conditionally render the word "like" if there is only one like and "likes" if there is 0 or more than 1 */}
                 {/* is likes greater than 1? */}
                 {image.likes===1?
                 // if it is, 
-                <h4>{image.likes} like </h4>:
+                <h4 className>{image.likes} like </h4>:
                 //else 
                 <h4>{image.likes} likes </h4>
                 }
                 {/* add a delete button and an onClick run the delete function */}
-                <button onClick={deleteImage}>Delete</button>
+                <DeleteIcon className="deleteIcon" onClick={deleteImage}/>
+
         </div>
     )
 }

@@ -2,7 +2,7 @@
     background-image: url(../../images/form-background.png);
     background-size: cover;
     display: flex;
-    height: 23vh;
+    height: 20vh;
     font-family: "TenorSans-Regular";
     font-weight: bold;
     color: #F8F4EC;
@@ -13,7 +13,6 @@
     position: fixed;
     bottom: 0;
     width:100%;
-    text-align: ;
 }
 
 .label-background{

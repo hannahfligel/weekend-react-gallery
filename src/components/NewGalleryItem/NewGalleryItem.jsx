@@ -1,6 +1,5 @@
 import { useState } from "react" ; 
 import axios from "axios";
-import Button from '@mui/material/Button';
 import './NewGalleryItem.css';
 
 
@@ -66,7 +65,7 @@ function NewGalleryItem(props) {
                     IMAGE DESCRIPTION:
                     {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
                     {/* onChange fires off the descriptionChange function */}
-                    <input id="descriptionInput" className="form-control" placeholder="description" onChange={ (event)=>{ descriptionChange (event) } }></input>
+                    <input id="descriptionInput" className="form-control" placeholder="enter description..." onChange={ (event)=>{ descriptionChange (event) } }></input>
                 </label>
                     <button class="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
             </form>
