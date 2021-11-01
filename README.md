@@ -1,6 +1,6 @@
 # React Gallery
 
-Demo of the finished app coming soon!
+<img src='/src/images/photo-gallery.gif'></img>
 
 ## Duration:
 5 days 
