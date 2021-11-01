@@ -3,7 +3,7 @@
 Demo of the finished app coming soon!
 
 ## Duration:
-3 days 
+5 days 
 
 ## Description 
 This full-stack application allow users to view a photo gallery, add an image by inputting an image URL and image description. It also allows the user to like and delete an image. 
