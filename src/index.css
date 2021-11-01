@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+@font-face {
+  font-family: "Carphe";
+  src: local("Carphe"),
+    url("./fonts/Carphe.ttf") format("truetype");
+}

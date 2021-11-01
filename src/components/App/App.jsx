@@ -4,6 +4,7 @@ import axios from 'axios';
 import GalleryList from '../../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
 import NewGalleryItem from '../../NewGalleryItem/NewGalleryItem';
+import Header from '../../Header/Header';
 
 
 function App() {
@@ -33,9 +34,7 @@ function App() {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
-        </header>
+        <Header />
         {/* bring in the NewGalleryItem component and send it the getImages function */}
         <NewGalleryItem getImagesFunctionSentToNewGalleyItem={ getImages }/>
         {/* button i'll use later */}

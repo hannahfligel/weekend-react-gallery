@@ -1,6 +1,6 @@
 import { useState } from "react" ; 
 import axios from "axios";
-
+import Button from '@mui/material/Button';
 
 
 //props is the object the contains the images array from App.jsx
@@ -51,7 +51,7 @@ function NewGalleryItem(props) {
 
 
     return(
-        <div>
+        <div className="uploadForm">
             {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
             {/* onChange fires off the urlChange function */}
             <input placeholder="url" onChange={ (event)=>{ urlChange (event) } }></input>

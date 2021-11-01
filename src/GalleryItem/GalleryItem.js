@@ -1,5 +1,7 @@
 import Axios from "axios";
 import { useState } from "react" ; 
+import Button from '@mui/material/Button';
+
 
 function GalleryItem ( props ){
 
