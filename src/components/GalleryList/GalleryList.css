@@ -84,3 +84,14 @@ img{
     justify-content: space-between;
     padding: 0 10px;
 }
+
+.description {
+    display: flex;
+    /* align-items - y or vertical positioning */
+    align-items: center;
+    /* flex-wrap: wrap; */
+    font-family: "TenorSans-Regular";
+    height: 300px;
+    font-size: 25px;
+    background-color: #ffffff;;
+}

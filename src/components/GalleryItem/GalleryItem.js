@@ -77,7 +77,9 @@ function GalleryItem ( props ){
                         <img src={ props.imagesSentToGalleryItem.path } onClick={ toggleImage }></img>
                     : //true
                         //else, display the description 
-                        <h3 onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
+                        <div className="description">
+                            <h3 className="description" onClick={ toggleImage }>{props.imagesSentToGalleryItem.description}</h3>
+                        </div>
                 }
             </div>
 
