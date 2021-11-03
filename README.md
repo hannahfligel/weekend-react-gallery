@@ -3,7 +3,7 @@
 <img src='/src/images/photo-gallery.gif'></img>
 
 ## Duration:
-5 days 
+1 week
 
 ## Description 
 This full-stack application allow users to view a photo gallery, add an image by inputting an image URL and image description. It also allows the user to like and delete an image. 
