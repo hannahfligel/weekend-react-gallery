@@ -1,0 +1,21 @@
+.deleteConfirm{
+    background-color: #7f7c64 !important;
+    border: #7f7c64 !important;
+}
+
+.deleteConfirm:hover{
+    background-color: #64624f !important;
+    border: #64624f !important;
+}
+
+.dontDelete{
+    background-color: #c2bd99 !important;
+    border: #c2bd99 !important;
+    color: #64624f !important;
+}
+
+.dontDelete:hover{
+    background-color: #ada988 !important;
+    border: #a7a385 !important;
+    color: #64624f !important;
+}

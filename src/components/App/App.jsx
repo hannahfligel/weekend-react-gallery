@@ -4,7 +4,9 @@ import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList'
 import {useEffect, useState} from "react";
 import NewGalleryItem from '../NewGalleryItem/NewGalleryItem';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../Header/Header';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 
 function App() {

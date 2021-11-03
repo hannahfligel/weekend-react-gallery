@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import '../GalleryList/GalleryList.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteModal from '../DeleteModal/DeleteModal';
 
 
 
@@ -49,6 +50,8 @@ function GalleryItem ( props ){
     //create a delete image function
     const deleteImage = ()=>{
         console.log("deleteImage clicked");
+        console.log(image);
+        console.log(props);
         //run an axios req to delete the image that associated to the specific image id 
         Axios.delete(`/gallery/delete/${image.id}`,{
             //data will be the req.body that hold the id of the image 
@@ -105,28 +108,12 @@ function GalleryItem ( props ){
                     </div>
                     <div className="deleteIcon">
                         {/* add a delete button and an onClick run the delete function */}
-                        <DeleteIcon onClick={deleteImage} data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+                        {/* <DeleteIcon onClick={deleteImage}/> */}
+
+                        {/* send the deleteImage function to DeleteModal via props */}
+                        <DeleteModal deleteImageFunction={deleteImage}/>
                     </div>
                 </div>
-                    {/* modal */}
-                    {/* <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Are you sure you want to delete the image?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="dontDelete btn btn-secondary" data-bs-dismiss="modal">No</button>
-                                    <button onClick={deleteImage} type="button" data-bs-dismiss="modal" class="deleteConfirm btn btn-primary">Yes, delete image</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-
             </div>
     )
 }
