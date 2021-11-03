@@ -21,7 +21,7 @@ function DeleteModal( props ) {
           <Modal.Header closeButton>
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
-          <Modal.Body>Are you sure you want to delete the image?</Modal.Body>
+          <Modal.Body>Are you sure you want to delete this image?</Modal.Body>
           <Modal.Footer>
             <Button className="dontDelete" onClick={handleClose}>
               No
