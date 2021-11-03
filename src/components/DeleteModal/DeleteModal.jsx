@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import '../DeleteModal/DeleteModal.css';
 
 
+//Bootstrap modal
 function DeleteModal( props ) {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
