@@ -62,26 +62,31 @@ function NewGalleryItem(props) {
         <div>
             {
             show?
-            <button onClick={showUpload}>add photo</button>:
-            <div className="uploadForm">
-                <button onClick={hideUpload}>button</button>
-                <form className= "label-background">
-                    <h2 className="addImageTitle">ADD AN IMAGE</h2>
-                    <hr/>
-                    <label htmlFor="urlInput" className="urlInput form-label ">
-                        IMAGE LINK:
-                        {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
-                        {/* onChange fires off the urlChange function */}
-                        <input id="urlInput" className="form-control" placeholder="enter url..." onChange={ (event)=>{ urlChange (event) } }></input>
-                    </label>
-                    <label htmlFor="descriptionInput" className="descriptionInput form-label">
-                        IMAGE DESCRIPTION:
-                        {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
-                        {/* onChange fires off the descriptionChange function */}
-                        <input id="descriptionInput" className="form-control" placeholder="enter description..." onChange={ (event)=>{ descriptionChange (event) } }></input>
-                    </label>
-                        <button className="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
-                </form>
+            <div className="showUploadButton">
+                <button onClick={showUpload}>add photo</button>
+                </div>
+                :
+                <div className="hideUploadButton" className="uploadForm">
+                    <form className= "label-background">
+                        <h2 className="addImageTitle">ADD AN IMAGE</h2>
+                        <hr/>
+                        <label htmlFor="urlInput" className="urlInput form-label ">
+                            IMAGE LINK:
+                            {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
+                            {/* onChange fires off the urlChange function */}
+                            <input id="urlInput" className="form-control" placeholder="enter url..." onChange={ (event)=>{ urlChange (event) } }></input>
+                        </label>
+                        <label htmlFor="descriptionInput" className="descriptionInput form-label">
+                            IMAGE DESCRIPTION:
+                            {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
+                            {/* onChange fires off the descriptionChange function */}
+                            <input id="descriptionInput" className="form-control" placeholder="enter description..." onChange={ (event)=>{ descriptionChange (event) } }></input>
+                        </label>
+                            <button className="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
+                    </form>
+                <div className="hideUploadButton">
+                    <button onClick={hideUpload}>Close</button>
+                </div>
             </div>
             }
 

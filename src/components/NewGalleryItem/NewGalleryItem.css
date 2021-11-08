@@ -50,3 +50,26 @@
 hr{
     margin: 8px 0px 10px;
 }
+
+.showUploadButton{
+    /* fixed always stays in view when you scroll */
+    position: fixed;
+    /* bottom is saying how far the item is from the bottom of the page */
+    bottom: 0;
+    /* activate flex-box */
+    display: flex;
+    /* bring to the right of page */
+    justify-content: flex-end;
+    width: 100%;
+    padding: 30px;
+}
+
+.hideUploadButton{
+    position: fixed;
+    display: flex;
+    /* bring to the right of page */
+    justify-content: flex-end;
+    width: 100%;
+    padding: 30px;
+    bottom: 10vh;
+}
