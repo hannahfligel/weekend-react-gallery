@@ -6,7 +6,8 @@ import './GalleryList.css';
 function GalleryList ( props ){
     //const[name, setName]= useState(null);
     return(
-        <div className="container gallery">
+    <div className="gallerySection">
+        <div className="container">
             {/* map/loop through images array passes through as props. Then, for every individual image (it's url, description, name, etc..) in the array, run the GalleryItem component to pass the image down */}
             {/* key={image.id} is there to give a unique identifier to each mapped component */}
             {/* send then the getImagesFunctionToDeleteImage via props to GalleryItem  */}
@@ -14,6 +15,7 @@ function GalleryList ( props ){
             { props.imagesSentToGalleryList.map( image=>(< GalleryItem imagesSentToGalleryItem={image} key={image.id}  getImagesFunctionToDeleteImage={ props.getImagesFunctionToDeleteImage }/>))}
             </div>
         </div>
+    </div>
     )
 }
 

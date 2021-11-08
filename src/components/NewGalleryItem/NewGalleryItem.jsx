@@ -1,6 +1,8 @@
 import { useState } from "react" ; 
 import axios from "axios";
 import './NewGalleryItem.css';
+import CancelIcon from '@mui/icons-material/Cancel';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
 
 //props is the object the contains the images array from App.jsx
@@ -28,23 +30,28 @@ function NewGalleryItem(props) {
     }
 
     const uploadImage = ()=>{
-        //create an object called imageToUpload and give it the keys of url and description and set their values to the url and description consts that were created above on line 11 & 13. 
-        let imageToUpload={
-            url: url,
-            description: description
+        if(url === '' || description === ''){
+            alert("One or more inputs are missing")
         }
-        //create an axios post req to /gallery and send it the imageToUpload object 
-        axios.post('/gallery', imageToUpload
-            ).then(function (response) {
-                //run the get.req that was passed through props from app.jsx
-                //the reasoning for this is so that you don;t have to reload the page manually to display the new uploaded image. 
-                props.getImagesFunctionSentToNewGalleyItem();
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        console.log(imageToUpload);
+        else{
+            //create an object called imageToUpload and give it the keys of url and description and set their values to the url and description consts that were created above on line 11 & 13. 
+            let imageToUpload={
+                url: url,
+                description: description
+            }
+            //create an axios post req to /gallery and send it the imageToUpload object 
+            axios.post('/gallery', imageToUpload
+                ).then(function (response) {
+                    //run the get.req that was passed through props from app.jsx
+                    //the reasoning for this is so that you don;t have to reload the page manually to display the new uploaded image. 
+                    props.getImagesFunctionSentToNewGalleyItem();
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            console.log(imageToUpload);
+        }
     }
 
     const[show, setShow] = useState (true);
@@ -59,11 +66,11 @@ function NewGalleryItem(props) {
 
     return(
 
-        <div>
+        <div className="uploadBackground">
             {
             show?
             <div className="showUploadButton">
-                <button onClick={showUpload}>add photo</button>
+                <AddAPhotoIcon className="addAPhotoIcon" onClick={showUpload}>add photo</AddAPhotoIcon>
                 </div>
                 :
                 <div className="hideUploadButton" className="uploadForm">
@@ -85,7 +92,7 @@ function NewGalleryItem(props) {
                             <button className="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
                     </form>
                 <div className="hideUploadButton">
-                    <button onClick={hideUpload}>Close</button>
+                    <CancelIcon className="closeIcon" onClick={hideUpload}>Close</CancelIcon>
                 </div>
             </div>
             }
