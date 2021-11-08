@@ -26,9 +26,12 @@ This full-stack application allow users to view a photo gallery, add an image by
 
 ## Usage 
 ### Add an image 
+- click the camera button on the bottom right of the page 
 - enter an image URL link in the image link input field 
 - enter an image description in the image description input field 
 - click the upload button 
+- to close out of the image upload form, click the "X" button on the top right of the form 
+
 ### Like and Delete an Image 
 - To like an image, click the heart icon 
 - to delete an image, click the trash icon 
