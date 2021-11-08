@@ -1,6 +1,8 @@
 import { useState } from "react" ; 
 import axios from "axios";
 import './NewGalleryItem.css';
+import CancelIcon from '@mui/icons-material/Cancel';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 
 
 //props is the object the contains the images array from App.jsx
@@ -28,47 +30,73 @@ function NewGalleryItem(props) {
     }
 
     const uploadImage = ()=>{
-        //create an object called imageToUpload and give it the keys of url and description and set their values to the url and description consts that were created above on line 11 & 13. 
-        let imageToUpload={
-            url: url,
-            description: description
+        if(url === '' || description === ''){
+            alert("One or more inputs are missing")
         }
-        //create an axios post req to /gallery and send it the imageToUpload object 
-        axios.post('/gallery', imageToUpload
-            ).then(function (response) {
-                //run the get.req that was passed through props from app.jsx
-                //the reasoning for this is so that you don;t have to reload the page manually to display the new uploaded image. 
-                props.getImagesFunctionSentToNewGalleyItem();
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-        console.log(imageToUpload);
+        else{
+            //create an object called imageToUpload and give it the keys of url and description and set their values to the url and description consts that were created above on line 11 & 13. 
+            let imageToUpload={
+                url: url,
+                description: description
+            }
+            //create an axios post req to /gallery and send it the imageToUpload object 
+            axios.post('/gallery', imageToUpload
+                ).then(function (response) {
+                    //run the get.req that was passed through props from app.jsx
+                    //the reasoning for this is so that you don;t have to reload the page manually to display the new uploaded image. 
+                    props.getImagesFunctionSentToNewGalleyItem();
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            console.log(imageToUpload);
+        }
     }
 
-    
+    const[show, setShow] = useState (true);
 
+    const showUpload=()=>{
+        setShow(false);
+    }
+
+    const hideUpload=()=>{
+        setShow(true);
+    }
 
     return(
-        <div className="uploadForm">
-            <form className= "label-background">
-                <h2 className="addImageTitle">ADD AN IMAGE</h2>
-                <hr/>
-                <label htmlFor="urlInput" className="urlInput form-label ">
-                    IMAGE LINK:
-                    {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
-                    {/* onChange fires off the urlChange function */}
-                    <input id="urlInput" className="form-control" placeholder="enter url..." onChange={ (event)=>{ urlChange (event) } }></input>
-                </label>
-                <label htmlFor="descriptionInput" className="descriptionInput form-label">
-                    IMAGE DESCRIPTION:
-                    {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
-                    {/* onChange fires off the descriptionChange function */}
-                    <input id="descriptionInput" className="form-control" placeholder="enter description..." onChange={ (event)=>{ descriptionChange (event) } }></input>
-                </label>
-                    <button className="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
-            </form>
+
+        <div className="uploadBackground">
+            {
+            show?
+            <div className="showUploadButton">
+                <AddAPhotoIcon className="addAPhotoIcon" onClick={showUpload}>add photo</AddAPhotoIcon>
+                </div>
+                :
+                <div className="hideUploadButton" className="uploadForm">
+                    <form className= "label-background">
+                        <h2 className="addImageTitle">ADD AN IMAGE</h2>
+                        <hr/>
+                        <label htmlFor="urlInput" className="urlInput form-label ">
+                            IMAGE LINK:
+                            {/* creating an input for the image URL, use an onChange method to capture the event of what the user is inputting */}
+                            {/* onChange fires off the urlChange function */}
+                            <input id="urlInput" className="form-control" placeholder="enter url..." onChange={ (event)=>{ urlChange (event) } }></input>
+                        </label>
+                        <label htmlFor="descriptionInput" className="descriptionInput form-label">
+                            IMAGE DESCRIPTION:
+                            {/* creating an input for the image description, use an onChange method to capture the event of what the user is inputting */}
+                            {/* onChange fires off the descriptionChange function */}
+                            <input id="descriptionInput" className="form-control" placeholder="enter description..." onChange={ (event)=>{ descriptionChange (event) } }></input>
+                        </label>
+                            <button className="uploadButton btn btn-light" onClick={uploadImage}>Upload</button>
+                    </form>
+                <div className="hideUploadButton">
+                    <CancelIcon className="closeIcon" onClick={hideUpload}>Close</CancelIcon>
+                </div>
+            </div>
+            }
+
         </div>
     );
 }

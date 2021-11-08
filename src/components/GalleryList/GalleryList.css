@@ -3,7 +3,12 @@
     /* flex-direction: column; */
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: #F7F5EC;
   }  
+
+.gallerySection{
+    background-color: #F7F5EC;
+}
 
 .galleryContainer div {
   /* width: 30%; */
@@ -19,12 +24,6 @@ img{
   height: 300px;
   width: 100%;
 }
-
-.gallery{
-    /* add a margin-bottom to the gallery to avoid having the NewGalleryItem section from covering up a part of the the images*/
-    margin-bottom: 20vh;
-}
-
 
 .galleryCard{
     margin: 2px 2px;
@@ -43,6 +42,10 @@ img{
     color: #EA4C89;
 }
 
+.heartIconRed:hover{
+    cursor: pointer;
+}
+
 .heartIconGray{
     height: 30px;
     width: auto;
@@ -52,6 +55,7 @@ img{
 .heartIconGray:hover{
     width: auto;
     color: #EA4C89;
+    cursor: pointer;
 }
 
 
@@ -76,6 +80,7 @@ img{
 .deleteIcon:hover{
     width: auto;
     color: #EA4C89;
+    cursor: pointer;
 }
 
 .heartLikeAndDelete{
