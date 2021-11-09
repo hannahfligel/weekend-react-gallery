@@ -14,12 +14,11 @@ function DeleteModal( props ) {
     return (
       <>
         <DeleteIcon variant="primary" onClick={handleShow}>
-          Launch demo modal
         </DeleteIcon>
   
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Delete Image</Modal.Title>
           </Modal.Header>
           <Modal.Body>Are you sure you want to delete this image?</Modal.Body>
           <Modal.Footer>
